@@ -1,0 +1,90 @@
+ 
+<!doctype html>
+ <html>
+<head>
+<title>Story Writer</title>
+<script>
+    function loadStory(){
+        let storyName = document.getElementById("name_input").value;
+        let storyHTML = localStorage.getItem(storyName);
+        document.getElementById("story_editor").value = storyHTML;
+    }
+
+    function saveStory(){
+        let storyName = document.getElementById("name_input").value;
+        let storyHTML = document.getElementById("story_editor").value;
+        localStorage.setItem(storyName, storyHTML);
+    }
+
+
+</script>
+ <style>
+     body {
+         max-width: 960px;
+         margin: 0 auto;
+     }
+
+     h1{
+         font-family:cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         margin-bottom: 30px;
+         text-align: center;
+
+         
+     }
+
+     h2 {
+         font-size: 20px;
+         color:darkgreen;
+     }
+
+     input {
+         height: 30px;
+         width: 500px;
+         margin-left: 10px;
+         font-size: 18px;
+     }
+
+     textarea {
+         height: 250px;
+         width: 650px;
+         background-color:rgb(230, 248, 231);
+         font-size: 18px;
+         margin-bottom: 20px;
+     }
+
+     button {
+         background-color: darkgreen;
+         color: whitesmoke;
+         padding: 10px 20px;
+         font-size: 18px;
+         border-radius: 20px;
+     }
+
+     #form-input {
+         text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+     }
+
+  
+       #display{
+         margin-bottom: 20px;
+         margin-left: 10px;
+
+     }
+
+ </style>
+ </head>
+
+ <body>
+<h1>Story Editor</h1>
+<div id="form-input">
+<h2>Story Name:<input id="name_input"></input></h2>
+<section id="display">
+<button onclick="loadStory()">Find and Edit</button>
+<button onclick="saveStory()">Save</button>
+</section>
+ <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
+ <section id="story_display"></section>
+</div>
+ </body>
+</html>
