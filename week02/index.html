@@ -16,7 +16,95 @@
   </header>
   <main class="content">
     <h2>Week 02</h2>
-  
+
+    <p class="topic">Notes:</p>
+    <p class="topic">Loops</p>
+    <p>1. A single "let" statement may define multiple bindings; must be separated by commas: <br>Example: let one = 1, two = 2;</p>
+    <p>2. Use break to stop the loop. <br>Example: </p>
+
+      <p>for (current = 20; current+= 1) { <br>
+        &nbsp; &nbsp;if (current % 7 == 0) {<br>
+          &nbsp; &nbsp;&nbsp; console.log (current);<br>
+          &nbsp; &nbsp;&nbsp;break<br>
+          &nbsp; &nbsp;}<br>
+      }<br></p>
+       <p> <span class="comment">* the break stops the loop because the remainder of 21 and 7 is equals to 0)</span></p>
+
+    <p>3. The forEach() method calls a function for each element in an array. <a href="Exercise-1.html">Exercise-1</a>  and <a href="Exercise-2.html">Exercise-2</a </p>
+    <p>a. Parameters for forEach method: </p>
+      <p>Current Value (required) - The value of the current array element <br>
+      Index (optional) - The current element's index number <br>
+      Array (optional) - The array object to which the current element belongs</p>
+       <p>*<span class="comment">I found out that these three parameters should be in order when used together.</span></p>
+
+       <p class="topic">Arrays Methods</p>
+
+       <p class="comment">** Declare arrays using const</p>
+       <p>1. The pop() method removes the last element from an array:</p>
+       <p>2. The push() method adds a new element to an array (at the end):</p>
+       <p class="comment">** The shifting works on the first element while pop and push on the last.</p>
+       <p>--- The shift() method removes the first array element and "shifts" all other elements to a lower index.</p>
+       <p>--- The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:</p>
+       <p class="comment">Do not use -- delete --, use pop() or shift() instead</p>
+       <p>3. The concat() method creates a new array by merging (concatenating) existing arrays: <br>
+          Example:<br>
+           const arr1 = [1, 2, 3, 4]; <br>
+           const arr2 = [5, 6, 7, 8]; <br>
+           const arr3 = [9, 10, 11, 12];<br>
+           const combineArr = arr1.concat(arr2, arr3);
+
+         </p>
+       <p>4. The splice() method adds new items to an array. <a href="Exercise-3.html">Exercise 3</a></p>
+       <p>  Example: splice(2, 0, "dog", "cat")<br> <span class="comment">
+        2 - defines the position where new elements should be removed<br>
+        0 - defines how many elements should be added<br>
+        dog, cat - the new elements to be added</span><br> </p>
+        <p>5. The slice() method slices out a piece of an array into a new array, and creates a new array.</p>
+        <p>Example:<br>
+          const animals = ["cats", "dogs", "snakes", "rabbits", "cows"]<br>
+          const animals = fruits.slice(3); <br><br>
+
+          <span class="comment">New array will be ["rabbits, "cows"]<br>
+          element 3 is "rabbits" so it will be sliced out rabbits and cows (make a new array)<br><br></span></p>
+
+          <p class="topic">Functions</p>
+          <p class="comment">** I haven't experienced using arrow functions and callbacks, so I'm not good at it. Need extra time to study them.</p>
+          <p>1. Function Declarations:<br>
+            &nbsp;&nbsp;function functionName(parameters){ <br>
+              &nbsp;&nbsp;&nbsp;code <br>
+            }
+            <p>2. Function Expressions: (can be stored in a variable)<br>
+              const x = function (a, b) {return a * b};<br>
+
+              <p>-- After a function expression has been stored in a variable, the variable can be used as a function.</p>
+              <p>Example: <br>
+                const x = function (a, b) { <br>
+                  return a * b <br>
+                };<br>
+                let z = x(4,3);<br>
+                <p class="comment">** z is equals to 12</p>
+                
+                <p>3. Callback Functions: A callback is a function passed as an argument to another function, and to be executed after another function has finished execution.</p>
+                <p>Exmple: <br>
+                  function myDisplayer(some) {<br>
+                    &nbsp;&nbsp;document.getElementById("demo").innerHTML = some;<br>
+                }<br>
+                
+                function myCalculator(num1, num2, myCallback) {<br>
+                  &nbsp;&nbsp;let sum = num1 + num2;<br>
+                  &nbsp;&nbsp;myCallback(sum);<br>
+                }<br>
+                
+                myCalculator(5, 5, myDisplayer);</p>
+                <p class="comment">In the example above, myDisplayer is the name of a function.<br>
+
+                  It is passed to myCalculator() as an argument.</p>
+                  <p class="comment">Do not use parentheses when passing a function as an argument <br>
+                    Right: myCalculator(5, 5, myDisplayer);</br>
+                    Wrong: myCalculator(5, 5, myDisplayer());</p>
+                <p>Callback function Example: <a href="Exercise-4.html">Exercise 4</a></p>
+                <p class="comment">In the example showOdd is a callback function.</p>
+
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
   <script>

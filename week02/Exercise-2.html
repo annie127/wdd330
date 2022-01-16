@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Loops and Arrays</h1>
+<h2>The forEach() Method</h2>
+
+<p>forEach() calls a function for each element in an array:</p>
+
+<p>Example: Multiply the value of each element with 10: [65, 44, 12, 4]</p>
+
+<div id="forEachArray"></div>
+
+</body>
+<script>
+    const numbers = [65, 44, 12, 4];
+    numbers.forEach(computeProduct)
+
+    function computeProduct(item, index, arr){
+        arr[index] = item * 10;
+    }
+
+    document.getElementById("forEachArray").innerHTML = numbers;
+    </script>
+</html>

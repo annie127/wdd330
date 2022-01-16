@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<h2>Callback Function</h2>
+<p>Find the odd numbers in the following array:</p>
+<p>numbers = [1, 2, 4, 7, 3, 5, 6];</p>
+
+<div id="outputOdd"></div>
+</body>
+<script>
+    let numbers =[1, 2, 4, 7, 3, 5, 6];
+
+    function showOdd(number) {
+        return number % 2;
+      
+
+    }
+
+   const oddNumbers = numbers.filter(showOdd);
+
+    document.querySelector("#outputOdd").innerHTML = oddNumbers;
+
+</script>
+</html>

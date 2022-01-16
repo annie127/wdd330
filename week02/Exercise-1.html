@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Loops and Arrays</h1>
+<h2>The forEach() Method</h2>
+
+<p>forEach() calls a function for each element in an array:</p>
+
+<p>Example: Compute the sum of the values in an array: [65, 44, 12, 4]</p>
+
+<div id="forEachArray"></div>
+
+</body>
+<script>
+    let sum = 0;
+    const numbers = [65, 44, 12, 4];
+    numbers.forEach(computeSum);
+
+    function computeSum(eachNumber){
+        sum += eachNumber;
+    }
+
+    document.getElementById("forEachArray").innerHTML = sum;
+    </script>
+</html>
