@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD 330 Portfolio | Annie Hawley</title>
+  <meta name="description"
+    content="WDD 330 Course Portfolio: Web Frontend Development at Brigham Young University - Idaho">
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <header class="content">
+    <h1>WDD 330 Portfolio</h1>
+  </header>
+  <main class="content">
+    <h2>Week 03</h2>
+
+    <p class="topic">Object methods, "this"</p>
+    <p>1. "this" keyword refers to the object it belongs to.</p>
+    <p>2. <span class="comment">"this" in a method</span><br>
+    Example:
+
+    const person = <br>
+     &nbsp;&nbsp;&nbsp; firstName: "John",<br>
+     &nbsp;&nbsp;&nbsp;lastName: "Doe",<br>
+     &nbsp;&nbsp;&nbsp;id: 5566,<br>
+     &nbsp;&nbsp;&nbsp;fullName : function(){<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; return this.firstName + " " + this.lastName;<br>
+      &nbsp;&nbsp;&nbsp;}<br>
+    };<br><br>
+
+    <span class="comment">So in this example, person.fullName(); will return John Doe<br>
+    "this" refers to the person object and the person object owns the fullName method</span><br><br>
+  
+    3. <span class="comment">"this" in Object construction</span><br>
+    function Human (age) {<br>
+     &nbsp;&nbsp; this.age = age<br>
+    }<br><br>
+    
+    let greg = new Human(22)<br>
+    let thomas = new Human(24)<br><br>
+
+    <span class="comment">In this example, "this" refers to the instance. Greg and Thomas are the instance of Human </span><br><br>
+
+    4. <span class="comment">"this" in Event Listeners</span><br>
+    let button = document.querySelector('button')<br>
+
+button.addEventListener('click', function() {<br>
+  &nbsp;&nbsp;console.log(this) // button<br>
+
+})<br><br>
+
+<span class="comment">"this" is set to the element that fired the event in an even listener.</span><br>
+
+
+<span class="comment">**I'm still a little confuse by the "this" keyword. I guess I will be able understand when I finally use it in my code.</span></p>
+
+<br>
+<p class="topic">Objects</p>
+
+<p>1. Creating Objects<br></br>
+
+const name = 'Iron Man';<br>
+const realName = 'Tony Stark';<br>
+
+<i>// long way</i> <br>
+const ironMan = { name: name, realName: realName };<br>
+<i>// short ES6 way - the property key is the same as the variable name</i><br>
+const ironMan = {name, realName};<br></p>
+
+<p>2. Access properties of an object using the dot notation - superman.name -  or bracket notation - superman['name']</p>
+<p>3. To call an object's method, also use the dot or bracket notation - superman.fly() or superman['fly]() --- parentheses is needed after the method name.</p>
+<p>4. The "in" operator can be used to check whether an object has a particular property. Example: 'city' in superman; or superman.city !== undefined</p>
+<p>5. Can also use hasOwnProperty - superman.hasOwnProperty('city')</p>
+<p>6. To find all the properties in an object, use <em>for in</em> loop. Example: <br><br>
+  for(const key in superman) <br>
+    &nbsp;&nbsp;console.log(key + ": " + superman[key]);<br>
+}<br><br>
+
+for(const key in superman) {<br>
+  &nbsp;if(superman.hasOwnProperty(key)){  ---  <span class="comment">to make sure that only the object's own properties are returned<br></span>
+    &nbsp;&nbsp;console.log(key + ": " + superman[key]);<br>
+  }<br>
+}<br> </p>
+<p>7. Object.keys() method will return an array of all the keys of any object that is provided as an argument, while Object.values() will return an arrays of all the values. </p>
+<p>8. Adding properties - superman.city = 'Metropolis' -- <span class="comment"> just assign a value to the new property</span></p>
+<p class="comment">*** Properties don't appear on the way they are entered, not an ordered list like array, set or map.</p>
+<p>9. Change the value of the properties -- superman['real name'] = 'Ka-el';</p>
+<p>10. Use <em>delete</em>to remove any property. Ex: delete superman.fly</p>
+<p>11. An object literal can be passed as a parameter to a function, and arguments can be in any order</p>
+<p>12. A regular expression (or RegExp, for short) is a pattern that can be used to search strings for matches to the pattern. Ex.  if looking for any word ending in 'ing', could use the regular expression /[a-zA-Z]+ing$/<br>
+To test the pattern:<br>
+pattern.test('joke');<br>
+<< false<br>
+
+pattern.test('joking');<br>
+<< true<br>
+
+pattern.test('jokingly');<br>
+<< false</p>
+
+<p>13. Character Groups <br>
+  const vowels = /[aeiou]/  -- matches any vowel <br>
+  /[A-Z]/ - all uppercase letters<br>
+  /[0-9]/ - numbers 0 to 9<br>
+  /[^A-Z]/ - any character that is not capital letter <br><br>
+
+  pattern = /[Jj][aeiou]v[aeiou]/; ---  represents the letter J (lowercase or capital) followed by a vowel, followed by a lowercase v, followed by a vowel: <br><br>
+<< /[Jj][aeiou]v[aeiou]/<br>
+
+pattern.test('JavaScript');<br>
+<< true<br>
+
+pattern.test('jive');<br>
+<< true<br>
+
+pattern.test('hello');<br>
+<< false<br></p>
+
+<br>
+<p class="topic">Document Object Model</p>
+<p>Example being used: - <a href="heroes.html">Heroes.html</a></p>
+<p>1. <em>Document.body</em> returns the body element of a web page<br>
+
+  <em>Document.images</em> returns a node list of all the images contained in the document.<br>
+  
+  <em>Document.links</em> returns a node list of all the <a> elements and <area> elements that have an href attribute.<br>
+  
+  <em>Document.anchors</em> returns a node list of all the <a> elements that have a name attribute.<br>
+  
+  <em>Document.forms</em> returns a node list of all the forms in the document</p>
+
+  <p>2. const wonderWoman = document.querySelector('li:last-child'); -- will return only the last item in the document</p>
+  <p>3. const batman = ul.querySelector('li#bats') --  will find an li element with an id of bats</li></p>
+  <p>childNodes  - will return all of the child notes of the node concerned including text nodes</p>
+  <p>children - will not include text nodes</p>
+  <p>firstChild - returns the first child of a node</p>
+  <p>lastChild - returns the last child of a node</p>
+  <p><span class="comment">***The first child and last child of the node ul is not li, it is text nodes generated by the white space characters between ul and li</span></p>
+  <p>parentNode - returns the parent node of an element.</p>
+  <p>4. Finding the Value of a Node<br><br>
+    getAttribute() - returns the value of the attribute<br>
+    setAttribute - change the value of an element's attributes , takes two arguments - the attribute want to change and the new value of that attribute<br>
+    Example: <br>
+    wonderWoman.setAttribute('class', 'villain');<br><br>
+
+    ***<span class="comment">If the element does not have an attribute, the setAttribute can be used to add an attribute to an element</span><br>
+    <p>5.Can also use the dot notation to access the attributes. Ex wonderWoman.id</p>
+    <p>6. classList -- list of all the classes an element has<br><br>
+    <span class="comment">** Use classList instead of className to modify the name of an element to avoid overwriting all the classes.</span><br><br>
+    add - add a class to an element without overwriting any classes that already exist. Ex wonderWoman.classList.add('warrior')<br>
+    remove - will remove a specific class from an element<br>
+    toggle - add a class if an element doesn’t have it already, and remove the class if it does have it. It returns true if the class was added and false if it was removed. For example:<br>
+      wonderWoman.classList.toggle('hero'); <span class="comment">// will remove the 'hero' class</span><br>
+      wonderWoman.classList.toggle('sport'); <span class="comment">// will add the 'hero' class back</span><br>
+      contains - check to see if an element has a particular class</p>
+
+      <p>7. Creating a new element with text content: <br><br>
+      a. Create the element node -- const flash = document.createElement('li');<br>
+
+      b. Create the text node -- flash.textContent = 'Flash';<br>
+      
+      c. Append the text node to the element node -- flash.appendChild(flashText); </p>
+
+      <p>8. Create elements using function:<br><br>
+        function createElement (tag,text) {<br>
+          &nbsp; &nbsp;const el = document.createElement(tag);<br>
+          &nbsp;&nbsp;el.textContent = text;<br>
+          &nbsp;&nbsp;&nbsp;return el<br>
+      }<br>
+
+      <span class="comment">use the function above to create another list item element:</span><br>
+      const aquaman = createElement('li','Aquaman');<br>
+      <p>9. Updating CSS</p>
+      <p>a. Any CSS property names that are separated by dashes must be written in camelCase notation. Ex background-color --- backgroundColor</p>
+      <p>b. display - make elements appear and disappear. Ex superman.style.display = 'none'; ----> reappear using block Ex. superman.style.display = "block";</p>
+      <p class="comment">*** It is much better to keep relevant styles in a separate stylesheet than to use the style property.</p>
+      <br>
+
+      <p class="topic">Events</p>
+      <p>1. Event listeners - runs when the user clicks anywhere on the page and it is the recommended way of dealing with events. <br>
+        document.body.addEventListener("click", doSomething);</p>
+        <p><a href="events.html">Code sample</a></p>
+        <p>console.log(event.type) - tells what type of event was logged<br>
+        <span class="comment">**the parameter event can be any variable, but programmers shortened it to (e) -- now I know what that (e) stands for :)</span></p>
+        <p>2. Mouse events</p>
+        <p>mousedown<br>
+          mouseup<br>
+          mouseover<br>
+          mouseout<br>
+          mousemove<br><br>
+          Example:<br>
+          const mouseParagraph = document.getElementById('mouse');<br>
+mouseParagraph.addEventListener('mouseover', highlight);<br>
+mouseParagraph.addEventListener('mouseout', highlight);<br>
+        </p>
+        <p>dblclick- occurs when the user doubleclicks on the element to which the event listener is attached.</p>
+        <p class="comment">** Be careful in using click and dbclick events to the same element because the doubleclick event will always cause the click even to fire.</p>
+        <p>3. Keyboard Events</p>
+        <P>keydown event occurs when a key is pressed and will continue to occur if the key is held down.<br>
+          keypress event occurs after a keydown event but before a keyup event<br>
+          keyup event occurs when a key is released.</p>
+          <p class="comment">**The keydown event is the action of pressing a key, whereas the keypress event is the action of a character being typed on the screen.</p>
+
+          <p>4. Touch Events </p>
+          <p class="comment">** Use in touch-screen devices - can be made with a finger, and also with a stylus or another body part</p>
+          <p class="comment">** It's important to support both mouse event and touch event because some devices have both mouse and touch interactions.</p>
+          <p>touchstart -  occurs when a user initially touches the surface.<br>
+            touchend - occurs when a user stops touching the surface:<br>
+            touchmove - occurs after a user has touched the screen then moves around without leaving<br>
+            touchenter - occurs when a user has already started touching the surface, but then passes over the element to which the event listener is attached. <br>
+            touchleave - occurs when the user is still touching the surface, but leaves the element to which the event listener is attached.<br>
+            touchcancel - occurs when a touch event is interrupted, such as a user’s finger moving outside the document window, or too many fingers being used at once. A pop-up dialog will also cancel a touch event.</p>
+
+          <p class="comment">There is no "swipe event". Created by the combination of touchstart, touchmove, and touchleave events</p>
+          <p class="comment">** Touch events are complex and difficult to implement -- that's a relief since I find it hard to understand :)</p>
+          <p>a. removeEventListener() - remove event listeners</p>
+          <p>b. preventDefault() - is a method of the event object that can be used inside the callback function to stop the default behavior happening.<br>
+          <span class="comment">**Be careful in using the preventDefault. Users may get confuse when certain behaviors they expect to happen don't happen.</span></p>
+          </p>
+          <p>5. Event Propagation - Capturing vs Bubbling</p>
+          <p>bubbling - upwards- default behavior- when the event fires on the element clicked on first, then bubbles up the document tree, firing an event on each parent element until it reaches the root node.<br>
+          capturing - downwards - starts by firing an event on the root element, then propagates downwards, firing an event on each child element until it reaches the target element that was clicked on.</p>
+          <p>6. Event Delegation - attached an event listener to the parent element to capture events triggered by its child elements.</p>
+
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>
+  WebFont.load({google: {families: ['Roboto', 'Source+Sans+Pro']}});
+</script>
+</body>
+</html>
