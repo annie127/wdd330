@@ -10,6 +10,10 @@ const linksContent = [
       {
       label: "Week 3: Objects - Document Object Model - Events",
       url: "week03/index.html"
+    },
+    {
+      label: "Week 4: Forms - Object Oriented Programming - Modern Javascript",
+      url: "week04/index.html"
     }
 
   ]

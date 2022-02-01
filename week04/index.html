@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD 330 Portfolio | Annie Hawley</title>
+  <meta name="description"
+    content="WDD 330 Course Portfolio: Web Frontend Development at Brigham Young University - Idaho">
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <header class="content">
+    <h1>WDD 330 Portfolio</h1>
+  </header>
+  <main class="content">
+    <h2>Week 04</h2>
+
+    <p class="topic">Forms</p>
+    <p><a href="search.html" target="_alt">Form Example</a> for exercise</p>
+    <p>1. Accessing Forms</p>
+    <p>a. const form = document.forms[0]; <span class="comment">// uses index notation to return the first form object</span><br>
+    b. const form = document.forms.search; <span class="comment">// uses the name attribute to identify a form</span><br>
+  c. const form = document.forms['search']; <span class="comment">// square bracket notation is recommended to avoid referencing any properties or methods in the form</span><br>
+d. const input = form.searchInput or const input = form['searchInput'] <span class="comment">to access the input field named searchInput</span></p>
+<p>2. a. form.submit() - submits the form automatically or can use: <br>
+  button type='submit'>Submit <br>
+  input type='submit' value='Submit'><br>
+  input type='image' src='button.png'> </p>
+  <p>b. form.reset() or button type='reset'>Reset <span class="comment">// resets the form, but be careful in using it since it will wipe out all the data that has been entered.</span><br>
+  c. focus event - is used to put the focus on an element, like when you put your cursor in the input field<br>
+  d.  change event -  occurs when the user moves the focus away from the form element after changing it</p>
+  <p>3. submit event - occurs when the form is submitted, will send the content of the form to the server to be processed</p>
+  <p>4. Form Controls - <a href="hero.html" target="_alt">Hero.html</a>
+  <p>input  -fields, including text, passwords, check boxes, radio buttons, and file uploads<br>
+    select - menus for drop-down lists of options<br>
+    textarea  - elements for longer text entry<br>   
+    button  -elements for submitting and resetting forms</p>
+    <p>a. autofocus attribute give focus to this element when a page loads - it is the same as the focus() event<br>
+    b. maxlength - limits the number of characters to be entered in the field<br>
+  <span class="comment">** There are still many attributes that can be used in a form to make it user-friendly</span></p>
+  <p>5. Input fields <br><br>
+    a. input type='password' is used to enter passwords or secret information - the characters are concealed<br>
+  b. type='checkbox' - used to select different options, can check more than one<br>
+  c. type='checkbox' value='Flight' name='powers' checked -- checked attribute is being used to initially check the checkboxes<br>
+d. radio button - only one option can be selected<br>
+e. type='file' - use to upload files</p>
+<p>6. disabled attribute - disable the submit button when there are errors on the form</p>
+
+
+
+
+
+
+
+
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>
+  WebFont.load({google: {families: ['Roboto', 'Source+Sans+Pro']}});
+</script>
+</body>
+</html>
